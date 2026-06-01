@@ -1,0 +1,2092 @@
+:root {
+  /* Main Colors - ULTRA LUMINOUS & BRIGHT */
+  --primary: #ac69fa;
+  --primary-light: #455e8b;
+  --primary-dark: #483c88;
+  --primary-glow: rgb(55, 78, 129);
+  
+  --cyan: #99a1f0;
+  --cyan-light: #99a1f0;
+  --cyan-glow: rgb(55, 78, 129);
+  
+  --aqua: #99a1f0;
+  --turquoise: #99a1f0;
+  --mint: #99a1f0;
+  --mint-light: #99a1f0;
+  --lime: #99a1f0;
+  --lime-soft: #99a1f0;
+  --magenta: #99a1f0;
+  
+  /* Backgrounds - Clean dark with luminous accents */
+  --bg-light: #0A0E14;
+  --bg-section-1: linear-gradient(180deg, rgba(233, 21, 215, 0.97) 0%, rgba(218, 30, 235, 0.94) 100%);
+  --bg-section-2: linear-gradient(180deg, rgba(233, 40, 207, 0.94) 0%, rgba(230, 33, 236, 0.97) 100%);
+  --bg-section-3: linear-gradient(180deg, rgba(255, 33, 207, 0.97) 0%, rgba(216, 34, 233, 0.94) 100%);
+  
+  --bg-card: rgba(224, 17, 214, 0.808);
+  --bg-card-hover: rgba(224, 17, 214, 0.808);
+  --bg-glass: rgba(224, 17, 214, 0.808);
+  
+  /* Text - ULTRA BRIGHT */
+  --text-white: #FFFFFF;
+  --text-light: #F0FFFF;
+  --text-gray: #D0FFF5;
+  --text-muted: #A0FFE8;
+  
+  /* Gradients - VIBRANT & BRIGHT */
+  --gradient-hero: linear-gradient(135deg, rgba(0, 255, 217, 0.4) 0%, rgba(0, 229, 255, 0.35) 50%, rgba(0, 217, 255, 0.3) 100%);
+  --gradient-primary: linear-gradient(135deg, #00FFD9 0%, #00E5FF 100%);
+  --gradient-cyan: linear-gradient(135deg, #80F0FF 0%, #00D9FF 100%);
+  --gradient-mint: linear-gradient(135deg, #80FFEB 0%, #00FFD9 100%);
+  --gradient-lime: linear-gradient(135deg, #CBFF00 0%, #4DFFCF 100%);
+  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  
+  /* Effects - ULTRA GLOW */
+  --shadow-glow: 0 0 60px rgba(0, 255, 217, 0.5), 0 0 120px rgba(0, 229, 255, 0.3);
+  --shadow-cyan: 0 0 60px rgba(0, 229, 255, 0.5), 0 0 120px rgba(0, 217, 255, 0.3);
+  --shadow-card: 0 20px 40px -8px rgba(0, 0, 0, 0.25);
+  --blur-heavy: 24px;
+  --blur-medium: 12px;
+  --blur-light: 6px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #0A0E14 0%, #0F1420 50%, #0A0E14 100%);
+  color: var(--text-white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  25% { transform: translateY(-40px) translateX(15px) scale(1.15); opacity: 0.8; }
+  50% { transform: translateY(-80px) translateX(0) scale(1.1); opacity: 0.9; }
+  75% { transform: translateY(-40px) translateX(-15px) scale(1.15); opacity: 0.8; }
+}
+
+@keyframes floatingImage {
+  0%, 100% { transform: translateY(0) rotateZ(0deg); }
+  33% { transform: translateY(-25px) rotateZ(1deg); }
+  66% { transform: translateY(-15px) rotateZ(-1deg); }
+}
+
+@keyframes tiltBounce {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+
+
+@keyframes dividerSlide {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes badgeGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(233, 229, 231, 0.562), 0 0 40px rgba(255, 255, 255, 0.562);
+    border-color: rgba(245, 245, 245, 0.562);
+  }
+}
+
+@keyframes badgePulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotateFloat {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(5deg) translateY(-5px); }
+  50% { transform: rotate(0deg) translateY(-10px); }
+  75% { transform: rotate(-5deg) translateY(-5px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SECTION DIVIDER - YELLOW BORDER
+   ============================================ */
+
+/* ============================================
+   MARQUEE BANNER
+   ============================================ */
+.marquee-container {
+  background: rgba(98, 33, 172, 0.685);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(98, 33, 172, 0.651);
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+  padding-right: 0;
+}
+
+.marquee-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+  white-space: nowrap;
+  padding: 0 24px;
+  letter-spacing: 0.3px;
+}
+
+.marquee-item strong {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+.marquee-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px var(--primary-glow);
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   HEADER - ENHANCED ANIMATIONS
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 15px 20px;
+  margin-top: 48px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.header.visible {
+  transform: translateY(0);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 8px 8px 8px 24px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: navPillEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center;
+}
+
+@keyframes navPillEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nav-pill:hover {
+  border-color: rgba(252, 252, 252, 0.5);
+  box-shadow: 0 20px 60px rgba(248, 248, 248, 0.521), 0 0 40px rgba(0, 255, 217, 0.2);
+  transform: translateY(-2px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+  filter: drop-shadow(0 0 10px var(--primary-glow));
+}
+
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 30px;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--cyan));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 60%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(243, 243, 243, 0.5);
+}
+
+
+.btn-telegram {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--bg-light);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-telegram:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.2);
+}
+
+.btn-telegram .btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 105px;
+  left: 20px;
+  right: 20px;
+  background: rgba(15, 20, 25, 0.98);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-gray);
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(45, 212, 191, 0.1);
+  color: var(--text-white);
+}
+
+.mobile-cta {
+  margin-top: 10px;
+  justify-content: center;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+/* ============================================
+   HERO SECTION - ESTILO COMO LA IMAGEN
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* FONDO NEGRO */
+  background: #000;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-image: url('pinki.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* X = izquierda/derecha */
+  /* Y = arriba/abajo */
+  background-position: 0% 25%;
+
+    /* EMPUJAR A LA DERECHA */
+  transform: translateX(270px);
+
+  z-index: 0;
+  opacity: 0.9;
+
+  filter: contrast(1.05) saturate(1.1);
+}
+
+/* OVERLAY ROSADO COMO LA FOTO */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(83, 50, 136, 0.979) 0%,
+        rgb(83, 50, 136) 30%,
+      rgba(83, 50, 136, 0.89) 50%,
+      rgba(83, 50, 136, 0.233) 70%,
+      rgba(83, 50, 136, 0.288) 100%
+    );
+
+  z-index: 1;
+}
+
+/* SOMBRA ABAJO */
+
+/* CONTENIDO */
+.hero-container,
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+/* TEXO MÁS IMPACTANTE */
+.hero-title {
+  color: #fff;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+}
+
+/* TEXTO NEGRO COMO LA REFERENCIA *//* TEXTO NEGRO COMO LA REFERENCIA *//* TEXTO NEGRO COMO LA REFERENCIA *//* TEXTO NEGRO COMO LA REFERENCIA *//* TEXTO NEGRO COMO LA REFERENCIA */
+.hero-title .outline-text {
+  color: #c286fa;
+}
+
+/* SUBTITULO */
+.hero-subtitle {
+  color: rgba(248, 235, 235, 0.92);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 120px 20px 60px;
+  }
+
+  .hero::before {
+    background-position: 70% center;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 95, 145, 0.75) 0%,
+        rgba(255, 95, 145, 0.45) 45%,
+        rgba(0,0,0,0.55) 100%
+      );
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero::before {
+    background-position: 78% center;
+    background-size: cover;
+  }
+
+  .hero-title {
+    letter-spacing: -1px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .hero::before {
+    background-size: cover;
+    background-position: 85% center;
+    transform: translateX(12%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 140px 20px 60px;
+  }
+
+  .hero::before {
+    background-size: cover;
+
+    /* MÁS DERECHA EN MOBILE */
+    background-position: 90% center;
+
+    transform: translateX(18%);
+    opacity: 0.95;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.808) 0%,
+        rgba(0, 0, 0, 0.20) 100%
+      );
+  }
+}
+
+@media (max-width: 480px) {
+  .hero::before {
+    background-size: cover;
+    background-position: 95% center;
+
+    /* EXTREMO DERECHA */
+    transform: translateX(25%);
+  }
+}
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: particleFloat 12s ease-in-out infinite;
+  filter: blur(0px);
+  box-shadow: 0 0 15px rgba(255, 0, 119, 0.7), 0 0 30px rgba(0, 229, 255, 0.4);
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(7, 7, 7, 0.2) 0%, rgba(0, 229, 255, 0.15) 50%, rgba(77, 255, 207, 0.2) 100%);
+  border: 2px solid rgba(18, 19, 19, 0.4);
+  padding: 14px 28px;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease, badgeGlow 3s ease-in-out infinite, badgePulseScale 4s ease-in-out infinite;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.badge-pulse {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  animation: pulse 2.5s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.badge-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.781);
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(48px, 8vw, 90px);
+  font-weight: 700;
+  line-height: 0.95;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.title-line {
+  display: block;
+  color: #fefeff;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.highlight-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0 12px;
+  margin-left: 5px;
+  transform: rotate(-2deg);
+  animation: tiltBounce 4s ease-in-out infinite;
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 50%, #f1f1f1 100%);
+  background-clip: text;
+}
+
+.outline-text {
+  color: #40c9d3;
+  background: linear-gradient(135deg, #ffffff 100%, #ffffff 100%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle strong {
+  color: #fff;
+}
+
+.highlight-text {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Main CTA Button */
+.btn-cta-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease 0.3s both;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.btn-cta-main:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 50px rgba(34, 211, 238, 0.3);
+}
+
+/*TELEGRAM*/
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(135deg, #fbff02d0 0%, #ddda12c5 100%);
+  padding: 20px 120px;
+  border-radius: 16px;
+}
+
+/* CONTENEDOR */
+.btn-content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* CENTRADO */
+
+  gap: 18px;
+}
+
+/* TEXTO */
+.btn-text {
+  display: flex;
+
+  /* EN FILA */
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  text-align: center;
+
+  margin: 0 auto;
+
+  white-space: nowrap;
+}
+
+/* TEXTO PRINCIPAL */
+.btn-main-text {
+  font-size: 24px;
+  font-weight: 900;
+
+  margin: 0;
+}
+
+/* SUBTEXTO */
+.btn-sub-text {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: rgba(255,255,255,0.9);
+
+  margin: 0;
+
+  white-space: nowrap;
+}
+
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%);
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.btn-arrow svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-cta-main:hover .btn-arrow svg {
+  transform: translateX(6px);
+}
+
+.btn-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 4s ease-in-out infinite;
+}
+
+/* ============================================
+   MOBILE REDISEÑO COMPLETO
+   REEMPLAZA TODO TU CSS MOBILE POR ESTE
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* RESET */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    overflow-x: hidden;
+
+    background: #ff4f8b;
+
+    box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* ============================================
+     NAVBAR
+     ============================================ */
+
+  .header {
+    position: fixed !important;
+
+    top: 14px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 0 14px;
+
+    z-index: 999999;
+
+    background: transparent !important;
+  }
+
+  .header-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-pill {
+    width: 100%;
+
+    min-height: 68px;
+
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.14);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* LOGO */
+  .logo {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logo-text {
+    font-size: 13px;
+    font-weight: 800;
+
+    color: #fff;
+
+    white-space: nowrap;
+  }
+
+  /* LINKS DESKTOP */
+  .nav-links {
+    display: none;
+  }
+
+  /* TELEGRAM */
+  .btn-telegram {
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    background: #fff;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+  }
+
+  .btn-telegram .btn-icon {
+    width: 15px;
+    height: 15px;
+
+    color: #000;
+
+    flex-shrink: 0;
+  }
+
+  .btn-telegram span {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #000;
+
+    white-space: nowrap;
+  }
+
+  /* HAMBURGUESA */
+  .mobile-menu-btn {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #fff;
+  }
+
+  /* OCULTAR MENU */
+  .mobile-menu {
+    display: none !important;
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+
+  .hero {
+    min-height: 100vh;
+
+    padding:
+      110px 16px 40px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* IMAGEN */
+  .hero::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url('pinki.png');
+    background-size: cover;
+    background-position: center;
+
+    z-index: 0;
+
+    transform: scale(1.04);
+  }
+
+  /* ROSADO */
+  .hero::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255, 80, 140, 0.28) 0%,
+        rgba(255, 80, 140, 0.10) 35%,
+        rgba(255, 80, 140, 0.45) 100%
+      );
+
+    z-index: 1;
+  }
+
+  /* CONTENEDOR */
+  .hero-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+  }
+
+  /* CARD */
+  .hero-content {
+    width: 100%;
+    max-width: 360px;
+
+    padding:
+      22px 18px 28px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    background:
+      rgba(255,255,255,0.08);
+
+    border:
+      1px solid rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.22);
+  }
+
+  /* ============================================
+     BADGE
+     ============================================ */
+
+  .hero-badge {
+    width: fit-content;
+
+    margin:
+      0 auto 26px;
+
+    padding:
+      10px 18px;
+
+    border-radius: 999px;
+
+    background:
+      rgba(233, 4, 4, 0.08);
+
+    border:
+      1px solid rgba(240, 5, 5, 0.12);
+  }
+
+  .badge-text {
+    font-size: 11px;
+    font-weight: 800;
+
+    color: #fff;
+
+    letter-spacing: 1px;
+  }
+
+  /* ============================================
+     TITULO
+     ============================================ */
+
+  .hero-title {
+    font-size: clamp(50px, 12vw, 64px);
+
+    line-height: 0.90;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 24px;
+
+    text-align: center;
+  }
+
+  .title-line {
+    display: block;
+  }
+
+  /* ============================================
+     SUBTITULO
+     ============================================ */
+
+  .hero-subtitle {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.92);
+
+    margin-bottom: 34px;
+  }
+
+  .hero-subtitle strong {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  /* ============================================
+     BOTON CTA
+     ============================================ */
+
+  .btn-cta-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease 0.3s both;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  }
+
+  /* CONTENIDO */
+  .btn-content {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+  /* ICONO */
+  .btn-cta-main .btn-icon {
+    width: 26px !important;
+    height: 26px !important;
+
+    min-width: 26px !important;
+    min-height: 26px !important;
+                          
+    color: #fff;
+
+    flex-shrink: 0;
+  }
+
+  /* TEXTO */
+  .btn-text {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+
+    line-height: 1;
+  }
+
+  .btn-main-text {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #fff;
+  }
+
+  .btn-sub-text {
+    font-size: 21px;
+    font-weight: 900;
+
+    color: #fff;
+  }
+
+  /* ============================================
+     EXTRA SMALL
+     ============================================ */
+
+  @media (max-width: 480px) {
+
+    .hero-title {
+      font-size: 46px;
+    }
+
+    .hero-content {
+      padding:
+        20px 16px 26px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+    }
+
+    .btn-sub-text {
+      font-size: 18px;
+    }
+
+  }
+
+}
+
+
+/* ============================================
+   NAVBAR LIMPIO SIN HAMBURGUESA
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* OCULTAR 3 LINEAS */
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  /* NAVBAR */
+  .nav-pill {
+    border: 1.5px solid rgba(255,255,255,0.55);
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 24px;
+
+    min-height: 66px;
+
+    padding: 0 18px;
+
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 0 24px rgba(255,255,255,0.10);
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  /* DESTELLO BLANCO */
+  .nav-pill::before {
+    content: '';
+
+    position: absolute;
+
+    top: -40%;
+    left: -30%;
+
+    width: 120px;
+    height: 180px;
+
+    background:
+      linear-gradient(
+        120deg,
+        transparent,
+        rgba(218, 196, 196, 0.28),
+        transparent
+      );
+
+    transform: rotate(20deg);
+
+    pointer-events: none;
+  }
+
+  /* TEXTO */
+  .logo-text {
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: .5px;
+  }
+
+}
+
+/* ============================================
+   BOTON TELEGRAM ELEGANTE
+   ============================================ */
+
+  /* CONTENIDO */
+  .btn-content {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    gap: 14px;
+    width: 10px !important;
+    height: 20px !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ICONO */
+  .btn-cta-main .btn-icon {
+    width: 20px !important;
+    height: 20px !important;
+
+    color: #ffffff;
+
+    flex-shrink: 0;
+  }
+
+  /* TEXTO */
+  .btn-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: .22;
+
+    text-align: left;
+  }
+
+  .btn-main-text {
+    font-size: 18px;
+    font-weight: 900;
+
+    color: #ffffff;
+
+    letter-spacing: -.8px;
+  }
+
+  .btn-sub-text {
+    font-size: 18px;
+    font-weight: 900;
+
+    color: #fdfdfd;
+
+    letter-spacing: -.8px;
+  }
+
+/* ==========================================================
+   AJUSTE PROFESIONAL FINAL - BOTÓN TELEGRAM CTA
+   Mantiene la estructura original y solo mejora el botón:
+   "UNIRME AL CANAL / GRATUITO AHORA"
+   ========================================================== */
+
+/* Header Telegram: más limpio y elegante */
+.btn-telegram {
+  min-height: 48px !important;
+  padding: 0 24px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fff3fb 48%, #ffd6ea 100%) !important;
+  color: #35123e !important;
+  font-weight: 900 !important;
+  letter-spacing: .2px !important;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.20),
+    0 0 28px rgba(255,255,255,.18) !important;
+}
+
+.btn-telegram .btn-icon {
+  width: 20px !important;
+  height: 20px !important;
+  color: #7a1bb3 !important;
+}
+
+.btn-telegram:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.28),
+    0 0 42px rgba(255,255,255,.28) !important;
+}
+
+/* CTA principal PC */
+.btn-cta-main {
+  width: fit-content !important;
+  min-width: 470px !important;
+  min-height: 92px !important;
+  padding: 4px !important;
+  border-radius: 24px !important;
+  border: 1.5px solid rgba(255,255,255,.62) !important;
+  background:
+    linear-gradient(135deg, rgba(145, 32, 252, 0.9), rgba(255,255,255,.18)),
+    linear-gradient(135deg, #8710f7 0%, #8710f7 42%, #8710f7 100%) !important;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.38),
+    0 0 44px rgba(255, 235, 59, .24),
+    0 0 50px rgba(255, 79, 139, .22) !important;
+  isolation: isolate !important;
+}
+
+.btn-cta-main::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -2px !important;
+  z-index: 0 !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.60), transparent 28%, rgba(255,255,255,.38) 56%, transparent 78%) !important;
+  opacity: .55 !important;
+  pointer-events: none !important;
+}
+
+.btn-cta-main:hover {
+  transform: translateY(-8px) scale(1.025) !important;
+  box-shadow:
+    0 32px 90px rgba(0,0,0,.46),
+    0 0 62px rgba(255, 235, 59, .34),
+    0 0 70px rgba(255, 79, 139, .28) !important;
+}
+
+.btn-cta-main .btn-content {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 84px !important;
+  padding: 0 42px !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  background:
+    linear-gradient(135deg, #7201f3 0%, #dfd6f5 48%, #7201f3 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    inset 0 -10px 30px rgba(98,33,172,.18) !important;
+}
+
+.btn-cta-main .btn-icon {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  color: #ffffff !important;
+  filter:
+    drop-shadow(0 4px 8px rgba(0,0,0,.28))
+    drop-shadow(0 0 12px rgba(255,255,255,.28)) !important;
+}
+
+.btn-cta-main .btn-text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  line-height: 1 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+.btn-cta-main .btn-main-text {
+  display: block !important;
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  line-height: .92 !important;
+  letter-spacing: -.8px !important;
+  text-transform: uppercase !important;
+  text-shadow:
+    0 3px 12px rgba(0,0,0,.35),
+    0 0 18px rgba(255,255,255,.12) !important;
+}
+
+.btn-cta-main .btn-sub-text {
+  display: block !important;
+  margin: 0 !important;
+  color: #7f07c4 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.45) !important;
+}
+
+.btn-cta-main .btn-shine {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 70%) !important;
+  transform: translateX(-120%) skewX(-14deg) !important;
+  animation: telegramButtonShine 3.8s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes telegramButtonShine {
+  0%, 38% {
+    transform: translateX(-120%) skewX(-14deg);
+    opacity: 0;
+  }
+  52% {
+    opacity: .95;
+  }
+  78%, 100% {
+    transform: translateX(120%) skewX(-14deg);
+    opacity: 0;
+  }
+}
+
+/* Orden visual PC: texto izquierda y botón con buena respiración */
+@media (min-width: 769px) {
+  .hero-content {
+    max-width: 620px !important;
+  }
+
+  .btn-cta-main {
+    margin-top: 6px !important;
+  }
+}
+
+/* CTA principal móvil: ordenado y proporcional */
+@media (max-width: 768px) {
+  .btn-telegram {
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 14px !important;
+    margin-left: 0 !important;
+  }
+
+  .btn-telegram span {
+    font-size: 12px !important;
+    color: #35123e !important;
+  }
+
+  .btn-telegram .btn-icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .btn-cta-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 340px !important;
+    min-height: 82px !important;
+    margin: 0 auto !important;
+    border-radius: 22px !important;
+  }
+
+  .btn-cta-main .btn-content {
+    min-height: 74px !important;
+    padding: 0 20px !important;
+    border-radius: 18px !important;
+    gap: 13px !important;
+  }
+
+  .btn-cta-main .btn-icon {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
+
+  .btn-cta-main .btn-text {
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 4px !important;
+  }
+
+  .btn-cta-main .btn-main-text {
+    font-size: clamp(21px, 6vw, 25px) !important;
+    letter-spacing: -.6px !important;
+  }
+
+  .btn-cta-main .btn-sub-text {
+    font-size: clamp(13px, 4vw, 16px) !important;
+    letter-spacing: 1.6px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .btn-cta-main {
+    max-width: 315px !important;
+  }
+
+  .btn-cta-main .btn-content {
+    padding: 0 16px !important;
+    gap: 10px !important;
+  }
+
+  .btn-cta-main .btn-main-text {
+    font-size: 20px !important;
+  }
+
+  .btn-cta-main .btn-sub-text {
+    font-size: 12px !important;
+    letter-spacing: 1.3px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE FINAL PRO - SOLO CELULAR
+   Mejora visual: rostro más visible, cuadro más arriba,
+   colores morados/rosados coherentes con PC y CTA más dinámico.
+   ========================================================== */
+@media (max-width: 768px) {
+  :root {
+    --mobile-purple: #533288;
+    --mobile-purple-2: #8710f7;
+    --mobile-pink: #ff4f8b;
+    --mobile-light: #dfd6f5;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(172,105,250,.28), transparent 35%),
+      linear-gradient(180deg, #12051f 0%, #2c0f49 46%, #15051f 100%) !important;
+  }
+
+  .marquee-container {
+    background: rgba(83,50,136,.82) !important;
+    border-bottom: 1px solid rgba(255,255,255,.18) !important;
+    box-shadow: 0 10px 34px rgba(0,0,0,.24) !important;
+  }
+
+  .header {
+    top: 10px !important;
+    margin-top: 38px !important;
+    padding: 0 16px !important;
+  }
+
+  .nav-pill {
+    min-height: 56px !important;
+    padding: 0 12px 0 16px !important;
+    border-radius: 22px !important;
+    background:
+      linear-gradient(135deg, rgba(83,50,136,.78), rgba(135,16,247,.44)),
+      rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.30) !important;
+    box-shadow:
+      0 18px 46px rgba(0,0,0,.30),
+      inset 0 1px 0 rgba(255,255,255,.18),
+      0 0 32px rgba(172,105,250,.20) !important;
+  }
+
+  .logo-icon {
+    color: #ffffff !important;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,.45)) !important;
+  }
+
+  .logo-text {
+    font-size: 16px !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,.32) !important;
+  }
+
+  .btn-telegram {
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f5ecff 55%, #e6d6ff 100%) !important;
+    color: #533288 !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,.24), 0 0 18px rgba(255,255,255,.18) !important;
+  }
+
+  .btn-telegram span {
+    color: #533288 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+  }
+
+  .btn-telegram .btn-icon {
+    width: 15px !important;
+    height: 15px !important;
+    color: #8710f7 !important;
+  }
+
+  .hero {
+    min-height: 100svh !important;
+    padding: 0 16px 34px !important;
+    align-items: flex-start !important;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(255,255,255,.14), transparent 34%),
+      linear-gradient(180deg, #1d0730 0%, #3b145e 48%, #170522 100%) !important;
+  }
+
+  /* ==========================================================
+     AJUSTE CELULAR - IMAGEN DE FONDO PINKY
+     ----------------------------------------------------------
+     1) PARA ALARGAR / HACER MÁS GRANDE LA IMAGEN:
+        cambia background-size.
+        - 150% auto = más alejada
+        - 170% auto = alargada / más grande (actual)
+        - 190% auto = mucho más grande
+
+     2) PARA MOVER LA IMAGEN:
+        cambia background-position.
+        - center -20px = sube la imagen
+        - center 0px   = arriba
+        - center 30px  = medio
+        - center 70px  = baja la imagen
+
+     3) SOLO AFECTA A CELULAR porque está dentro del @media max-width: 768px.
+     ========================================================== */
+  .hero::before {
+    inset: 0 !important;
+    background-image: url('pinki.png') !important;
+    background-repeat: no-repeat !important;
+
+    /* AQUÍ ALARGAS / AGRANDAS LA IMAGEN DE FONDO EN CELULAR */
+    background-size: 210% auto !important;
+
+    /* AQUÍ MUEVES LA IMAGEN: primer valor = horizontal, segundo = vertical */
+    background-position: center -90px !important;
+
+    transform: none !important;
+    opacity: .98 !important;
+    filter: brightness(1.04) contrast(1.08) saturate(1.08) !important;
+    animation: pinkyMobilePhotoFloat 9s ease-in-out infinite alternate !important;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg,
+        rgba(20, 4, 32, .04) 0%,
+        rgba(83, 50, 136, .08) 24%,
+        rgba(83, 50, 136, .54) 52%,
+        rgba(49, 13, 76, .94) 100%),
+      radial-gradient(circle at 50% 18%, rgba(255,255,255,.10), transparent 28%),
+      radial-gradient(circle at 50% 78%, rgba(172,105,250,.36), transparent 42%) !important;
+    z-index: 1 !important;
+  }
+
+  /* Animación suave de la imagen en celular.
+     Si no quieres movimiento, borra la línea animation de .hero::before. */
+  @keyframes pinkyMobilePhotoFloat {
+    0% { background-position: center 12px; filter: brightness(1.02) contrast(1.08) saturate(1.06); }
+    100% { background-position: center 28px; filter: brightness(1.08) contrast(1.12) saturate(1.10); }
+  }
+
+  .hero-particles {
+    z-index: 3 !important;
+    opacity: .90 !important;
+  }
+
+  .particle {
+    width: 4px !important;
+    height: 4px !important;
+    background: rgba(255,255,255,.92) !important;
+    box-shadow:
+      0 0 14px rgba(255,255,255,.76),
+      0 0 30px rgba(172,105,250,.58) !important;
+  }
+
+  .hero-container {
+    width: 100% !important;
+    max-width: 430px !important;
+    min-height: 100svh !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  /* ==========================================================
+     AJUSTE CELULAR - CUADRO DIFUMINADO / CARD PRINCIPAL
+     ----------------------------------------------------------
+     AQUÍ MUEVES EL CUADRO:
+     margin-top controla si el cuadro sube o baja.
+
+     - Menor valor = el cuadro SUBE
+       ejemplo: clamp(240px, 36svh, 315px)
+
+     - Mayor valor = el cuadro BAJA
+       ejemplo: clamp(330px, 48svh, 410px)
+
+     Valor actual: subido un poco para ver mejor el rostro y el carro.
+     ========================================================== */
+  .hero-content {
+    position: relative !important;
+    width: min(100%, 382px) !important;
+    max-width: 382px !important;
+
+    /* AQUÍ SUBES O BAJAS EL CUADRO EN CELULAR */
+    margin-top: clamp(265px, 39svh, 290px) !important;
+
+    padding: 20px 17px 22px !important;
+    border-radius: 32px !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    background:
+      linear-gradient(145deg, rgba(83,50,136,.70), rgba(135,16,247,.34) 48%, rgba(255,79,139,.16)),
+      rgba(13, 3, 24, .34) !important;
+    border: 1px solid rgba(255,255,255,.26) !important;
+    box-shadow:
+      0 26px 72px rgba(0,0,0,.43),
+      inset 0 1px 0 rgba(255,255,255,.24),
+      0 0 46px rgba(172,105,250,.26),
+      0 0 70px rgba(255,79,139,.10) !important;
+    backdrop-filter: blur(13px) saturate(1.15) !important;
+    -webkit-backdrop-filter: blur(13px) saturate(1.15) !important;
+    animation: pinkyMobileCardIn .8s cubic-bezier(.16,1,.3,1) both !important;
+  }
+
+  .hero-content::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 210px !important;
+    height: 210px !important;
+    right: -82px !important;
+    top: -82px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.15) !important;
+    filter: blur(38px) !important;
+    animation: pinkyMobileAura 5s ease-in-out infinite !important;
+    pointer-events: none !important;
+  }
+
+  .hero-content::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: inherit !important;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.10) 44%, transparent 68%) !important;
+    transform: translateX(-130%) skewX(-16deg) !important;
+    animation: pinkyCardSweep 5.2s ease-in-out infinite !important;
+    pointer-events: none !important;
+  }
+
+  @keyframes pinkyMobileCardIn {
+    from { opacity: 0; transform: translateY(34px) scale(.96); filter: blur(8px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+
+  @keyframes pinkyMobileAura {
+    0%, 100% { opacity: .45; transform: scale(1); }
+    50% { opacity: .9; transform: scale(1.12); }
+  }
+
+  @keyframes pinkyCardSweep {
+    0%, 38% { transform: translateX(-130%) skewX(-16deg); opacity: 0; }
+    52% { opacity: .75; }
+    82%, 100% { transform: translateX(130%) skewX(-16deg); opacity: 0; }
+  }
+
+  .hero-badge {
+    margin: 0 auto 18px !important;
+    padding: 10px 18px !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.14) !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 0 26px rgba(255,255,255,.10) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  .badge-text {
+    color: #ffffff !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .badge-pulse {
+    width: 9px !important;
+    height: 9px !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 18px rgba(255,255,255,.68) !important;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 11.2vw, 54px) !important;
+    line-height: .90 !important;
+    letter-spacing: -2px !important;
+    margin: 0 auto 18px !important;
+    color: #ffffff !important;
+    text-shadow: 0 5px 18px rgba(0,0,0,.35), 0 0 30px rgba(255,255,255,.10) !important;
+  }
+
+  .title-line .outline-text,
+  .hero-title .outline-text {
+    color: #c590f7 !important;
+    -webkit-text-fill-color: #b994f5 !important;
+  }
+
+  .hero-subtitle {
+    max-width: 322px !important;
+    margin: 0 auto 20px !important;
+    font-size: 13.8px !important;
+    line-height: 1.56 !important;
+    color: rgba(255,255,255,.92) !important;
+    text-shadow: 0 3px 13px rgba(0,0,0,.34) !important;
+  }
+
+  .hero-subtitle strong,
+  .highlight-text {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+  }
+
+  .btn-cta-main {
+    width: 100% !important;
+    max-width: 322px !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+    margin: 0 auto !important;
+    padding: 3px !important;
+    border-radius: 22px !important;
+    border: 1px solid rgba(255,255,255,.48) !important;
+    box-shadow:
+      0 18px 46px rgba(0,0,0,.34),
+      0 0 34px rgba(172,105,250,.34),
+      0 0 36px rgba(255,79,139,.18) !important;
+  }
+
+  .btn-cta-main .btn-content {
+    min-height: 66px !important;
+    padding: 0 18px !important;
+    border-radius: 19px !important;
+    gap: 12px !important;
+    background: linear-gradient(135deg, #c96dff 0%, #a837ff 45%, #8710f7 100%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.42), inset 0 -12px 30px rgba(64,0,120,.22) !important;
+  }
+
+  .btn-cta-main .btn-icon {
+    width: 29px !important;
+    height: 29px !important;
+    min-width: 29px !important;
+    min-height: 29px !important;
+    color: #ffffff !important;
+  }
+
+  .btn-cta-main .btn-main-text {
+    font-size: clamp(21px, 5.6vw, 24px) !important;
+    line-height: .92 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-cta-main .btn-sub-text {
+    font-size: clamp(12px, 3.6vw, 15px) !important;
+    letter-spacing: 2.4px !important;
+    color: #352052 !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.35) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  /* Celulares pequeños: aquí también puedes ajustar la imagen */
+  .hero::before {
+    /* ALARGAR IMAGEN EN CELULAR PEQUEÑO */
+    background-size: 185% auto !important;
+
+    /* MOVER IMAGEN EN CELULAR PEQUEÑO */
+    background-position: center 10px !important;
+  }
+
+  .hero-content {
+    width: min(100%, 360px) !important;
+
+    /* MOVER CUADRO EN CELULAR PEQUEÑO */
+    margin-top: clamp(255px, 38svh, 320px) !important;
+
+    padding: 18px 15px 20px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(37px, 10.8vw, 49px) !important;
+  }
+
+  .hero-subtitle {
+    font-size: 13px !important;
+  }
+
+  .btn-cta-main {
+    max-width: 306px !important;
+  }
+}
